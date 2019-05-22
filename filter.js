@@ -2,6 +2,7 @@ const nav = document.querySelector('nav') // element that contains the filter li
 const article = document.querySelector('article'); // container for the articles this holds the [data-filterby] attribute
 const articles = Array.from(article.querySelectorAll('.article')); // a cached array of all the articles
 
+
 // listen for any click inside the container
 // Listening to the container prevents from adding event listeners to each element
 // which is not very performant
@@ -17,7 +18,6 @@ nav.addEventListener('click', e => {
 
 function renderArticles(oldFilter, newFilter) {
     // iterate over all articles and hide/show them based on the filter changes
-    // NOTE: this could be optimized to only update the elements that are changing...
     articles.forEach((el) => {
         if (newFilter === 'all') {
             el.hidden = false;
